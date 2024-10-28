@@ -3,8 +3,11 @@ if(APPLE_FRAMEWORK)
   ocv_module_disable(freetype)
 endif()
 
-ocv_check_modules(FREETYPE freetype2)
-ocv_check_modules(HARFBUZZ harfbuzz)
+find_package(FREETYPE)
+find_package(HARFBUZZ)
+
+# ocv_check_modules(FREETYPE freetype2)
+# ocv_check_modules(HARFBUZZ harfbuzz)
 
 if(OPENCV_INITIAL_PASS)
   if(NOT FREETYPE_FOUND)
